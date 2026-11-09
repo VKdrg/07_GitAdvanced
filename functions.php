@@ -8,45 +8,9 @@ function getClients(PDO $pdo): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function searchClientsByName(PDO $pdo, string $nom) : array
-{
-    $sql = "SELECT id_client, nom, prenom
-            FROM clients
-            WHERE nom = :nom";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['nom' => $nom]);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-$clients = getClients($pdo);
-
-// $sql = "SELECT * FROM client";
-// $stmt = $pdo -> query($sql);
-// $clients = $stmt -> fetchAll(PDO::FETCH_ASSOC);
-
-
-function getVehiculesByClient(PDO $pdo, int $client_id): array
-{
-    $sql = "SELECT vehicule_id, immatriculation, marque, modele
-            FROM vehicules
-            WHERE client_id = :client_id";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['client_id' => $client_id]);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-function addClient(PDO $pdo, string $nom, string $prenom, string $email): int      // toutes les données qu'on va ajouter à la DB.     // la function retourne void
-{
-    $sql = "INSERT INTO clients (nom, prenom, email)
-            VALUES (:nom, :prenom, :email)";
-    $stmt = $pdo->prepare($sql);    // prépare la requête SQL
-    $stmt -> execute([              // exécute la requête SQL
-        'nom' => $nom,
-        'prenom' => $prenom,
-        'email' => $email
-    ]);                             // mange des pates <3
-
-    return(int) $pdo->lastInsertId();
+function searchClientsByName(PDO $pdo, string $nom)
+{                            // mange des pates <3
+    echo(int) $pdo->lastInsertId();
 };
 
 function addVehicle(PDO $pdo, int $client_id, string $marque, string $modele, string $immatriculation, int $mise_circu, int $kilometrage): void
