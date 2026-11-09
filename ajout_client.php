@@ -39,7 +39,7 @@
 <?php endif; ?>
 
 <form method="POST">
-    <h2>Informations Client</h2>
+    <h2>Informations Client</h2>             //            ▶︎ •၊၊||၊|။|||| |    
     <label for="nom">Nom</label>
     <input type="text" id="nom" name="nom" required>
 

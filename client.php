@@ -24,7 +24,7 @@ if (isset($_GET['nom']))    // isset : fonction native PHP qui vérifie si la va
     <title>Document</title>
 </head>
 
-<body>
+<body>                                                                          //                  I know your 𝑔𝑎𝑦~
     <h1>Rechercher un client</h1>
 
     <form method="GET">

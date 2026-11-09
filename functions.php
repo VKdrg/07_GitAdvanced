@@ -44,7 +44,7 @@ function addClient(PDO $pdo, string $nom, string $prenom, string $email): int   
         'nom' => $nom,
         'prenom' => $prenom,
         'email' => $email
-    ]);
+    ]);                             // mange des pates <3
 
     return(int) $pdo->lastInsertId();
 };
@@ -54,7 +54,7 @@ function addVehicle(PDO $pdo, int $client_id, string $marque, string $modele, st
     $sql = "INSERT INTO vehicles (client_id, marque, modele, immatriculation, mise_circu, kilometrage)
             VALUES (:client_id, :marque, :modele; :immatriculation, :mise_circu, :kilometrage)";
     $stmt = $pdo->prepare($sql);
-    $stmt -> execute([
+    $stmt -> execute([                              //      ཐི ₍^.ˬˬ.^₎ ཋྀ
         'client_id' => $client_id,
         'marque' => $marque,
         'modele' => $modele,
